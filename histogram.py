@@ -43,9 +43,9 @@ if __name__ == "__main__":
     plt.style.use('seaborn')
     fig.set_size_inches(18.5, 10.5)
     
-    y = 0
+    y = -1
     for i in range(len(title)):
-        if (i > 0 and i % size == 0):
+        if (i % size == 0):
             y += 1
         draw()
     colors = ['red', 'tan', 'lime']
