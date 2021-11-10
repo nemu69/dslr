@@ -1,4 +1,5 @@
 from numpy import NaN
+import math
 import pandas as pd
 import sys
 import numpy as np
@@ -40,6 +41,9 @@ def describe_freq(df):
     return (val[1])
 
 def describe_mean(df):
+    """"
+    mean = sum(x) / len(x)
+    """
     l = []
     for x in df:
         if isinstance(x, float) or isinstance(x, int): 
@@ -49,9 +53,19 @@ def describe_mean(df):
     return ((sum(l) / len(l)))
 
 def describe_std(df):
+    """"
+    std = sqrt(mean(x)), where x = abs(a - a.mean())**2.
+    """
+    l = []
+    for x in df:
+        if isinstance(x, float) or isinstance(x, int): 
+            l.append(x)
+    if (len(l) == 0):
+        return (NaN)
+    dif = df - describe_mean(df)
+    mean = sum(np.abs(dif) ** 2) / (describe_count(df) - 1)
     x = abs(describe_count(df) - describe_mean(df))**2
-    std = np.sqrt(x)
-    return (std)
+    return (math.sqrt(mean))
 
 def describe_min(df):
     min = 0
@@ -98,7 +112,7 @@ if __name__ == "__main__":
         exit(-1)
     FILENAME = str(sys.argv[1])
     data = pd.read_csv(FILENAME)
-    print("exemple :\n", data.describe(include='all'))
+    print(data.describe(include='all'))
     title = list(data.columns)
     size = 15
     size_title = 6
@@ -127,9 +141,9 @@ if __name__ == "__main__":
     # for i in title:
     #     print("%*f|\t" % (size, describe_mean(data[i].dropna())), end="")
         
-    ## print("\n%-*s|\t" % (size_title, "std"), end="")
-    ## for i in title:
-    ##     print("%*f|\t" % (size, describe_std(data[i].dropna())), end="")
+    print("\n%-*s|\t" % (size_title, "std"), end="")
+    for i in title:
+        print("%*f|\t" % (size, describe_std(data[i].dropna())), end="")
         
     # print("\n%-*s|\t" % (size_title, "min"), end="")
     # for i in title:
