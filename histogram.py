@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 
 def draw():
     ax = plt.subplot2grid(shape=(nb[0], nb[1]), loc=(y, i - y * size))
-    ax.set_title(title[i])
-    ax.set_ylabel('Frequency')
-    ax.set_xlabel('Score')
+    ax.set_title(title[i], color='#2497C0')
+    ax.set_ylabel('Frequency', color='#A9ADAF')
+    ax.set_xlabel('Score', color='#DCD0A1')
     ax.hist(g[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#EC493C', label="Gryffindor")
     ax.hist(r[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#125E9F', label="Ravenclaw")
     ax.hist(s[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#24C070', label="Slytherin")
