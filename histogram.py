@@ -7,10 +7,11 @@ def draw():
     ax.set_title(title[i])
     ax.set_ylabel('Frequency')
     ax.set_xlabel('Score')
-    ax.hist(g[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#00cc96')
-    ax.hist(r[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#636bfa')
-    ax.hist(s[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#ac63fa')
-    ax.hist(h[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#ef553b')
+    ax.hist(g[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#EC493C', label="Gryffindor")
+    ax.hist(r[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#125E9F', label="Ravenclaw")
+    ax.hist(s[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#24C070', label="Slytherin")
+    ax.hist(h[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#F8FC05', label="Hufflepuff")
+    ax.legend()
 
 def get_size_to_draw():
     ncol = size
@@ -30,14 +31,14 @@ if __name__ == "__main__":
         exit(-1)
     FILENAME = str(sys.argv[1])
     data = pd.read_csv(FILENAME, index_col=False)
-    data.drop(['First Name', 'Last Name', 'Birthday', 'Best Hand'], axis='columns', inplace=True)
+    data.drop(['Index', 'First Name', 'Last Name', 'Birthday', 'Best Hand'], axis='columns', inplace=True)
     g = data.loc[data['Hogwarts House'] == "Gryffindor"]
     r = data.loc[data['Hogwarts House'] == "Ravenclaw"]
     s = data.loc[data['Hogwarts House'] == "Slytherin"]
     h = data.loc[data['Hogwarts House'] == "Hufflepuff"]
     data.drop(['Hogwarts House'], axis='columns', inplace=True)
     title = list(data.columns)
-    size = 5
+    size = 4
     nb = get_size_to_draw()
     fig = plt.figure(figsize=(nb[0] * 2, nb[1] * 2))
     plt.style.use('seaborn')
