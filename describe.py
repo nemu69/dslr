@@ -48,7 +48,7 @@ def describe_mean(df):
 	for x in df:
 		if isinstance(x, float) or isinstance(x, int): 
 			l.append(x)
-	if (len(l) == 0):
+	if not (len(l) == len(df)):
 		return (NaN)
 	return ((sum(l) / len(l)))
 
@@ -60,7 +60,7 @@ def describe_std(df):
 	for x in df:
 		if isinstance(x, float) or isinstance(x, int): 
 			l.append(x)
-	if (len(l) == 0):
+	if not (len(l) == len(df)):
 		return (NaN)
 	dif = df - describe_mean(df)
 	mean = sum(np.abs(dif) ** 2) / (describe_count(df) - 1)
@@ -84,7 +84,7 @@ def describe_p(df, percent):
 	for x in df:
 		if isinstance(x, float) or isinstance(x, int):
 			l.append(x)
-	if (len(l) == 0):
+	if not (len(l) == len(df)):
 		return (NaN)
 	k = (len(df) - 1) * percent / 100
 	f = np.floor(k)
