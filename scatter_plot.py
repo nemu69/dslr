@@ -51,7 +51,7 @@ if __name__ == '__main__':
 	for i in range(len(title)):
 		k = i
 		for j in range(len(title)):
-				draw()
+			draw()
 
 	# show the plot
 	colors = ['red', 'tan', 'lime']
