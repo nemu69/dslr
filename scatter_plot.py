@@ -14,10 +14,10 @@ def draw():
 	if (k == 0):
 		ax.set_title(title[j], color='#2497C0')
 	if (j != i):
-		ax.scatter(g[title[i]], g[title[j]], color='#00cc96')
-		ax.scatter(r[title[i]], r[title[j]], color='#636bfa')
-		ax.scatter(s[title[i]], s[title[j]], color='#ac63fa')
-		ax.scatter(h[title[i]], h[title[j]], color='#ef553b')
+		ax.scatter(g[title[i]], g[title[j]], color='#EC493C', label="Gryffindor")
+		ax.scatter(r[title[i]], r[title[j]], color='#125E9F', label="Ravenclaw")
+		ax.scatter(s[title[i]], s[title[j]], color='#24C070', label="Slytherin")
+		ax.scatter(h[title[i]], h[title[j]], color='#F8FC05', label="Hufflepuff")
 
 def get_size_to_draw():
 	ncol = size
@@ -60,9 +60,9 @@ if __name__ == '__main__':
 	plt.show()
 	plt.ylabel('Defense Against the Dark Arts', color='#ff5010')
 	plt.xlabel('Astronomy', color='#2497C0')
-	plt.scatter(g['Astronomy'], g['Defense Against the Dark Arts'], color='#00cc96')
-	plt.scatter(r['Astronomy'], r['Defense Against the Dark Arts'], color='#636bfa')
-	plt.scatter(s['Astronomy'], s['Defense Against the Dark Arts'], color='#ac63fa')
-	plt.scatter(h['Astronomy'], h['Defense Against the Dark Arts'], color='#ef553b')
+	plt.scatter(g['Astronomy'], g['Defense Against the Dark Arts'], color='#EC493C', label="Gryffindor")
+	plt.scatter(r['Astronomy'], r['Defense Against the Dark Arts'], color='#125E9F', label="Ravenclaw")
+	plt.scatter(s['Astronomy'], s['Defense Against the Dark Arts'], color='#24C070', label="Slytherin")
+	plt.scatter(h['Astronomy'], h['Defense Against the Dark Arts'], color='#F8FC05', label="Hufflepuff")
 	plt.savefig('img/result_scatter_plot.png', dpi=100)
 	plt.show()
