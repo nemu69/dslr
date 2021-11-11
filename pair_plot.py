@@ -8,7 +8,7 @@ def normalize(x):
 	return (x - min(x)) / (max(x) - min(x))
 
 def draw():
-	ax = plt.subplot(13, 13, k * len(title) + j + 1)
+	ax = plt.subplot(len(title), len(title), k * len(title) + j + 1)
 	if (j == 0):
 		ax.set_ylabel(title[i], color='#ff5010')
 	if (k == 0):
