@@ -60,7 +60,7 @@ Vous devrez rendre deux programmes :
 
 # Requirements
 
-- python3.10 min
+- python3.10
 - lib:
     - pip3 install pandas
     - pip3 install matplotlib
