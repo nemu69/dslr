@@ -113,7 +113,7 @@ if __name__ == "__main__":
 		exit(-1)
 	FILENAME = str(sys.argv[1])
 	data = pd.read_csv(FILENAME)
-	print(data.describe(include='all'))
+	#print(data.describe(include='all'))
 	title = list(data.columns)
 	data = data.transform(np.sort)
 	size = 13
