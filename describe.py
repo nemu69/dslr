@@ -113,56 +113,57 @@ if __name__ == "__main__":
 		exit(-1)
 	FILENAME = str(sys.argv[1])
 	data = pd.read_csv(FILENAME)
-	# print(data.describe(include='all'))
+	print(data.describe(include='all'))
 	title = list(data.columns)
 	data = data.transform(np.sort)
-	size = 15
+	size = 13
 	size_title = 6
 
-	print("%-*s|\t" % (size_title, ""), end="")
+	print("%-*s" % (size_title, ""), end="")
 	for i in title:
-		print("% *.*s|\t" % (size, size, i), end="")
+		print(" %*.*s" % (size, size, i), end="")
 
-	print("\n%-*s|\t" % (size_title, "count"), end="")
+	print("\n%-*s" % (size_title, "count"), end="")
 	for i in title:
-		 print("%*.0f|\t" % (size, describe_count(data[i].dropna())), end="")
+		print(" %*.0f" % (size, describe_count(data[i].dropna())), end="")
 		
-	print("\n%-*s|\t" % (size_title, "unique"), end="")
+	print("\n%-*s" % (size_title, "unique"), end="")
 	for i in title:
-		 print("%*.0f|\t" % (size, describe_unique(data[i].dropna())), end="")
+		print(" %*.0f" % (size, describe_unique(data[i].dropna())), end="")
 		
-	print("\n%-*s|\t" % (size_title, "top"), end="")
+	print("\n%-*s" % (size_title, "top"), end="")
 	for i in title:
-		 print("% *.*s|\t" % (size, size, describe_top(data[i].dropna())), end="")
+		print(" % *.*s" % (size, size, describe_top(data[i].dropna())), end="")
 		
-	print("\n%-*s|\t" % (size_title, "freq"), end="")
+	print("\n%-*s" % (size_title, "freq"), end="")
 	for i in title:
-		 print("%*.0f|\t" % (size, describe_freq(data[i].dropna())), end="")
+		print(" %*.0f" % (size, describe_freq(data[i].dropna())), end="")
 		
-	print("\n%-*s|\t" % (size_title, "mean"), end="")
+	print("\n%-*s" % (size_title, "mean"), end="")
 	for i in title:
-		 print("%*f|\t" % (size, describe_mean(data[i].dropna())), end="")
+		print(" %*f" % (size, describe_mean(data[i].dropna())), end="")
 		
-	print("\n%-*s|\t" % (size_title, "std"), end="")
+	print("\n%-*s" % (size_title, "std"), end="")
 	for i in title:
-		print("%*f|\t" % (size, describe_std(data[i].dropna())), end="")
+		print(" %*f" % (size, describe_std(data[i].dropna())), end="")
 		
-	print("\n%-*s|\t" % (size_title, "min"), end="")
+	print("\n%-*s" % (size_title, "min"), end="")
 	for i in title:
-		 print("%*f|\t" % (size, describe_min(data[i].dropna())), end="")
+		print(" %*f" % (size, describe_min(data[i].dropna())), end="")
 		
-	print("\n%-*s|\t" % (size_title, "25%"), end="")
+	print("\n%-*s" % (size_title, "25%"), end="")
 	for i in title:
-		 print("%*f|\t" % (size, describe_p(data[i].dropna(), 25)), end="")
+		print(" %*f" % (size, describe_p(data[i].dropna(), 25)), end="")
 	   
-	print("\n%-*s|\t" % (size_title, "50%"), end="")
+	print("\n%-*s" % (size_title, "50%"), end="")
 	for i in title:
-		 print("%*f|\t" % (size, describe_p(data[i].dropna(), 50)), end="")
+		print(" %*f" % (size, describe_p(data[i].dropna(), 50)), end="")
 	   
-	print("\n%-*s|\t" % (size_title, "75%"), end="")
+	print("\n%-*s" % (size_title, "75%"), end="")
 	for i in title:
-		 print("%*f|\t" % (size, describe_p(data[i].dropna(), 75)), end="")
+		print(" %*f" % (size, describe_p(data[i].dropna(), 75)), end="")
 	   
-	print("\n%-*s|\t" % (size_title, "max"), end="")
+	print("\n%-*s" % (size_title, "max"), end="")
 	for i in title:
-		 print("%*f|\t" % (size, describe_max(data[i].dropna())), end="")
+		print(" %*f" % (size, describe_max(data[i].dropna())), end="")
+	print()
