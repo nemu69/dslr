@@ -3,9 +3,15 @@ import math
 import numpy as np
 
 def describe_count(df):
+	'''
+	Return the count of the list
+	'''
 	return (len(df))
 
 def describe_unique(df):
+	'''
+	Return the count of all different value
+	'''
 	unique = []
 	for x in df:
 		if x not in unique:
@@ -15,6 +21,9 @@ def describe_unique(df):
 	return (len(unique))
 
 def describe_top(df):
+	'''
+	Return the key of the value who appear the most
+	'''
 	l = []
 	val = [NaN, 1]
 	for x in df:
@@ -26,6 +35,9 @@ def describe_top(df):
 	return (val[0])
 
 def describe_freq(df):
+	'''
+	Return the key of the number of time who the top appear
+	'''
 	l = []
 	val = [NaN, 1]
 	for x in df:
@@ -40,6 +52,7 @@ def describe_freq(df):
 
 def describe_mean(df):
 	""""
+	Mean of an array
 	mean = sum(x) / len(x)
 	"""
 	l = []
@@ -54,6 +67,7 @@ def describe_mean(df):
 
 def describe_std(df):
 	""""
+	Standard deviation of an array
 	std = sqrt(mean(x)), where x = abs(a - a.mean())**2.
 	"""
 	l = []
@@ -68,6 +82,9 @@ def describe_std(df):
 	return (math.sqrt(mean))
 
 def describe_min(df):
+	'''
+	Return the key of the min value in a dictionary
+	'''
 	min = 0
 	check = False
 	for x in df:
@@ -80,6 +97,9 @@ def describe_min(df):
 	return (min)
 
 def describe_p(df, percent):
+	'''
+	Take a ordered List with the rank in percent then return the percentile
+	'''
 	l = []
 	for x in df:
 		if isinstance(x, float) or isinstance(x, int):
@@ -98,6 +118,9 @@ def describe_p(df, percent):
 	return d0 + d1
 
 def describe_max(df):
+	'''
+	Return the key of the max value in a dictionary
+	'''
 	max = 0
 	check = False
 	for x in df:
@@ -108,3 +131,9 @@ def describe_max(df):
 	if not (check):
 		return (NaN)
 	return (max) 
+
+def     sigmoid(z):
+    '''
+    Sigmoid fonction
+    '''
+    return 1 / (1 + np.exp(-z))
