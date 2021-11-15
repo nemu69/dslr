@@ -12,4 +12,6 @@ if __name__ == "__main__":
 	FILENAME = str(sys.argv[1])
 	data = pd.read_csv(FILENAME, index_col=False)
 	data.drop(['Index', 'First Name', 'Last Name', 'Birthday', 'Best Hand'], axis='columns', inplace=True)
-    if ()
+	if (lib.describe_count(data['Hogwarts House'].dropna()) == 0):
+		print("Error: empty value")
+		exit(-1)

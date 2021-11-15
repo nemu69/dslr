@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import sys
+import lib.math as lib
 
 def normalize(x):
 	return (x - min(x)) / (max(x) - min(x))
@@ -40,6 +41,9 @@ if __name__ == '__main__':
 		sys.exit(1)
 	# read the data
 	data = pd.read_csv(sys.argv[1])
+	if (lib.describe_count(data['Hogwarts House'].dropna()) == 0):
+		print("Error: empty value")
+		exit(-1)
 	# drop the data
 	data.drop(['Index','First Name', 'Last Name', 'Birthday', 'Best Hand'], axis='columns', inplace=True)
 	g = data.loc[data['Hogwarts House'] == "Gryffindor"]
