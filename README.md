@@ -58,4 +58,25 @@ Vous devrez rendre deux programmes :
 
 ![exemple 2](https://user-images.githubusercontent.com/45235527/140956376-a3c95194-5fc6-45c6-a6c3-bb0c549b71b7.PNG)
 
+# Requirements
+
+- python3.10
+- lib:
+    - pip3 install pandas
+    - pip3 install matplotlib
+
 # Results
+
+ `python ./histogram.py DATA`
+
+<img alt="histo" src="https://github.com/AcensJJ/dslr/blob/main/img/histogram.png">
+
+`python ./scatter_plot.py DATA`
+ 
+<img alt="scatter" src="https://github.com/AcensJJ/dslr/blob/main/img/all_scatter_plot.png">
+
+<img alt="scatter line" src="https://github.com/AcensJJ/dslr/blob/main/img/result_scatter_plot.png">
+
+`python ./pair_plot.py DATA`
+
+<img alt="pair" src="https://github.com/AcensJJ/dslr/blob/main/img/pair_plot.png">
