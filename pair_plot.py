@@ -15,10 +15,10 @@ def draw():
 	if (k == 0):
 		ax.set_title(title[j], color='#2497C0')
 	if (j != i):
-		ax.scatter(g[title[i]], g[title[j]], color='#EC493C', label="Gryffindor")
-		ax.scatter(r[title[i]], r[title[j]], color='#125E9F', label="Ravenclaw")
-		ax.scatter(s[title[i]], s[title[j]], color='#24C070', label="Slytherin")
-		ax.scatter(h[title[i]], h[title[j]], color='#F8FC05', label="Hufflepuff")
+		ax.scatter(g[title[i]], g[title[j]], s=1, color='#EC493C', label="Gryffindor")
+		ax.scatter(r[title[i]], r[title[j]], s=1, color='#125E9F', label="Ravenclaw")
+		ax.scatter(s[title[i]], s[title[j]], s=1, color='#24C070', label="Slytherin")
+		ax.scatter(h[title[i]], h[title[j]], s=1, color='#F8FC05', label="Hufflepuff")
 	else:	
 		ax.hist(g[title[i]], bins='auto', density=True, alpha=0.75, histtype='stepfilled', color='#EC493C', label="Gryffindor")
 		ax.hist(r[title[i]], bins='auto', density=True, alpha=0.75, histtype='stepfilled', color='#125E9F', label="Ravenclaw")
@@ -55,8 +55,8 @@ if __name__ == '__main__':
 	size = len(title)
 	nb = get_size_to_draw()
 	fig = plt.figure(figsize=(nb[1] , nb[0]))
-	plt.style.use('seaborn')
-	fig.set_size_inches(18.5, 15.5)
+	# plt.style.use('seaborn')
+	fig.set_size_inches(30, 25.5)
 	for i in range(len(title)):
 		k = i
 		for j in range(len(title)):
