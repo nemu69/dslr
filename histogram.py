@@ -8,10 +8,10 @@ def draw():
 	ax.set_title(title[i], color='#2497C0')
 	ax.set_ylabel('Frequency', color='#A9ADAF')
 	ax.set_xlabel('Score', color='#DCD0A1')
-	ax.hist(g[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#EC493C', label="Gryffindor")
-	ax.hist(r[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#125E9F', label="Ravenclaw")
-	ax.hist(s[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#24C070', label="Slytherin")
-	ax.hist(h[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#F8FC05', label="Hufflepuff")
+	ax.hist(g[title[i]], bins='auto', density=True, alpha=0.75, histtype='stepfilled', color='#EC493C', label="Gryffindor")
+	ax.hist(r[title[i]], bins='auto', density=True, alpha=0.75, histtype='stepfilled', color='#125E9F', label="Ravenclaw")
+	ax.hist(s[title[i]], bins='auto', density=True, alpha=0.75, histtype='stepfilled', color='#24C070', label="Slytherin")
+	ax.hist(h[title[i]], bins='auto', density=True, alpha=0.75, histtype='stepfilled', color='#F8FC05', label="Hufflepuff")
 	ax.legend()
 
 def get_size_to_draw():
