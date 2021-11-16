@@ -55,7 +55,7 @@ if __name__ == '__main__':
 	size = len(title)
 	nb = get_size_to_draw()
 	fig = plt.figure(figsize=(nb[1] , nb[0]))
-	# plt.style.use('seaborn')
+	plt.style.use('seaborn')
 	fig.set_size_inches(30, 25.5)
 	for i in range(len(title)):
 		k = i
