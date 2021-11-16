@@ -77,6 +77,7 @@ if __name__ == "__main__":
 	FILENAME = str(sys.argv[1])
 	iteration = check_arg(sys.argv)
 	data = pd.read_csv(FILENAME, index_col=False)
+	data = data.fillna(0)
 	data = data.dropna()
 	data.drop(['Index', 'First Name', 'Last Name', 'Birthday', 'Best Hand',	'Arithmancy', 'Astronomy', 'Potions', 'Care of Magical Creatures', 'Transfiguration'], axis='columns', inplace=True)
 	if (lib.describe_count(data['Hogwarts House'].dropna()) == 0):
@@ -96,10 +97,10 @@ if __name__ == "__main__":
 	save = pd.DataFrame()
 	for house in lib.describe_unique_list_name(data['Hogwarts House'].dropna()):
 		cost_list = []
-		Y = np.array([int(y == house) for y in df], ndmin=2)
+		Y = T(np.array([int(y == house) for y in df], ndmin=2))
 		theta = np.zeros((9, 1))
 		for i in range(iteration):
-			theta = lib.stochastic_gradient_descent(theta, X, T(Y), m, cost_list, alpha=0.5)
+			theta = lib.stochastic_gradient_descent(theta, X, Y, m, cost_list, alpha=0.5)
 		print(house)
 		print(theta)
 		save[house] = theta
