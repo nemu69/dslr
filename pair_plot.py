@@ -20,10 +20,10 @@ def draw():
 		ax.scatter(s[title[i]], s[title[j]], color='#24C070', label="Slytherin")
 		ax.scatter(h[title[i]], h[title[j]], color='#F8FC05', label="Hufflepuff")
 	else:	
-		ax.hist(g[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#EC493C', label="Gryffindor")
-		ax.hist(r[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#125E9F', label="Ravenclaw")
-		ax.hist(s[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#24C070', label="Slytherin")
-		ax.hist(h[title[i]], bins=30, density=True, alpha=0.75, histtype='stepfilled', color='#F8FC05', label="Hufflepuff")
+		ax.hist(g[title[i]], bins='auto', density=True, alpha=0.75, histtype='stepfilled', color='#EC493C', label="Gryffindor")
+		ax.hist(r[title[i]], bins='auto', density=True, alpha=0.75, histtype='stepfilled', color='#125E9F', label="Ravenclaw")
+		ax.hist(s[title[i]], bins='auto', density=True, alpha=0.75, histtype='stepfilled', color='#24C070', label="Slytherin")
+		ax.hist(h[title[i]], bins='auto', density=True, alpha=0.75, histtype='stepfilled', color='#F8FC05', label="Hufflepuff")
 
 def get_size_to_draw():
 	ncol = size
