@@ -2,6 +2,30 @@ from numpy import NaN
 import math
 import numpy as np
 
+def     sigmoid(z):
+    '''
+    Sigmoid fonction
+    '''
+    return 1 / (1 + np.exp(-z))
+
+def cost_function(Y, m, hypothesis, cost_list):
+	'''
+	Cost fonction
+	'''
+	j = -(1/m*(np.sum(Y*np.log(hypothesis) + (1-Y)*np.log(1-hypothesis))))
+	cost_list.append(j)
+
+def stochastic_gradient_descent(theta, X, Y, m, cost_list, alpha):
+	'''
+	Apply the Gradient descent
+	'''
+	for i in range(m):
+		for j in range(9):
+			hypothesis = sigmoid((X[i]).dot(theta))
+			theta[j] -= (alpha / m) * (hypothesis - Y[i]) * X[i][j]
+			# cost_function(Y, m, hypothesis, cost_list)
+	return (theta)
+
 def describe_count(df):
 	'''
 	Return the count of the list
@@ -20,15 +44,32 @@ def describe_unique(df):
 		return (NaN)
 	return (len(unique))
 
+def describe_unique_list_name(df):
+	'''
+	Return the list with only one duplicated columns
+	'''
+	l = []
+	for x in df:
+		l.append(x)
+	top = [x for x in set(l)]
+	return top
+
+def describe_unique_list(df):
+	'''
+	Return the list with only one duplicated columns with the number of appear
+	'''
+	l = []
+	for x in df:
+		l.append(x)
+	top = [[x,l.count(x)] for x in set(l)]
+	return top
+
 def describe_top(df):
 	'''
 	Return the key of the value who appear the most
 	'''
-	l = []
 	val = [NaN, 1]
-	for x in df:
-		l.append(x)
-	top = [[x,l.count(x)] for x in set(l)]
+	top = describe_unique_list(df)
 	for x in top:
 		if x[1] > val[1]:
 			val = x
@@ -38,11 +79,8 @@ def describe_freq(df):
 	'''
 	Return the key of the number of time who the top appear
 	'''
-	l = []
 	val = [NaN, 1]
-	for x in df:
-		l.append(x)
-	top = [[x,l.count(x)] for x in set(l)]
+	top = describe_unique_list(df)
 	for x in top:
 		if x[1] > val[1]:
 			val = x
@@ -131,9 +169,3 @@ def describe_max(df):
 	if not (check):
 		return (NaN)
 	return (max) 
-
-def     sigmoid(z):
-    '''
-    Sigmoid fonction
-    '''
-    return 1 / (1 + np.exp(-z))
