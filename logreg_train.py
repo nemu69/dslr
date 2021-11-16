@@ -62,6 +62,14 @@ def check_arg(arg):
 				iteration = atoi(arg[i + 1])
 	return (iteration)
 
+def draw_coef_derter(cost, name):
+    plt.title("Courbe d'apprentisage " + name)
+    plt.tick_params(labelcolor='tab:orange')
+    plt.plot(range(len(cost)), cost, color='tab:red')
+    plt.tight_layout()
+    plt.savefig("img/log/learning_" + name + ".png")
+    # plt.show()
+
 if __name__ == "__main__":
 	if (len(sys.argv) < 2):
 		print("Error: no file data included")
@@ -96,5 +104,6 @@ if __name__ == "__main__":
 		print(theta)
 		save[house] = theta
 		cost_values.append([cost_list, house])
+	for cost in cost_values:
+		draw_coef_derter(cost[0], cost[1])
 	save_file(save)
-	
