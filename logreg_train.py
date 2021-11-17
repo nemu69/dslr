@@ -62,13 +62,34 @@ def check_arg(arg):
 				iteration = atoi(arg[i + 1])
 	return (iteration)
 
-def draw_coef_derter(cost, name):
-    plt.title("Courbe d'apprentisage " + name)
-    plt.tick_params(labelcolor='tab:orange')
-    plt.plot(range(len(cost)), cost, color='tab:red')
-    plt.tight_layout()
-    plt.savefig("img/log/learning_" + name + ".png")
-    # plt.show()
+def draw_cost():
+	fig, ax = plt.subplots(facecolor=(.18, .31, .31))
+	plt.tick_params(labelcolor='tab:orange')
+	x_cost = np.linspace(0.001, 0.999, 100)
+	y_cost0 = [-np.log(1 - x) for x in x_cost]
+	y_cost1 = [-np.log(x) for x in x_cost]
+	plt.title('cost function', color='cornflowerblue')
+	ax.plot(x_cost, y_cost0, label='$y = 0, -\log(1 - h_θ(x))$', color='royalblue')
+	ax.plot(x_cost, y_cost1, label='$y = 1, -\log(h_θ(x))$', color='crimson')
+	plt.legend()
+	plt.grid()
+	plt.tight_layout()
+	plt.savefig("img/log/cost.png")
+	plt.show()
+
+def draw_signoide():
+	fig, ax = plt.subplots(facecolor=(.18, .31, .31))
+	plt.tick_params(labelcolor='tab:orange')
+	X_sig = np.linspace(-10, 10, 100)
+	Y_sig = lib.sigmoid(X_sig)
+	plt.title('Sigmoid function', color='cornflowerblue')
+	ax.plot(X_sig, Y_sig, label=r'$g(z) = \frac{1}{1 + e^{-z}}$', color='darkviolet')
+	plt.yticks([0, 0.5, 1])
+	plt.legend()
+	plt.grid()
+	plt.tight_layout()
+	plt.savefig("img/log/sigmoid.png")
+	plt.show()
 
 if __name__ == "__main__":
 	if (len(sys.argv) < 2):
@@ -84,7 +105,6 @@ if __name__ == "__main__":
 		print("Error: empty value")
 		exit(-1)
 	m = len(data['Hogwarts House'])
-	cost_values = []
 	trained_parameters = []
 	X = np.concatenate(
         (
@@ -93,18 +113,16 @@ if __name__ == "__main__":
         ),
         axis=1
     )
-	df = data['Hogwarts House']
-	save = pd.DataFrame()
-	for house in lib.describe_unique_list_name(data['Hogwarts House'].dropna()):
-		cost_list = []
-		Y = T(np.array([int(y == house) for y in df], ndmin=2))
-		theta = np.zeros((9, 1))
-		for i in range(iteration):
-			theta = lib.stochastic_gradient_descent(theta, X, Y, m, cost_list, alpha=0.5)
-		print(house)
-		print(theta)
-		save[house] = theta
-		cost_values.append([cost_list, house])
-	for cost in cost_values:
-		draw_coef_derter(cost[0], cost[1])
-	save_file(save)
+	# df = data['Hogwarts House']
+	# save = pd.DataFrame()
+	# for house in lib.describe_unique_list_name(data['Hogwarts House'].dropna()):
+	# 	Y = T(np.array([int(y == house) for y in df], ndmin=2))
+	# 	theta = np.zeros((9, 1))
+	# 	for i in range(iteration):
+	# 		theta = lib.stochastic_gradient_descent(theta, X, Y, m, alpha=0.5)
+	# 	print(house)
+	# 	print(theta)
+	# 	save[house] = theta
+	# save_file(save)
+	draw_signoide()
+	draw_cost()

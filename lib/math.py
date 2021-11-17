@@ -15,7 +15,7 @@ def cost_function(Y, m, hypothesis, cost_list):
 	j = -(1/m*(np.sum(Y*np.log(hypothesis) + (1-Y)*np.log(1-hypothesis))))
 	cost_list.append(j)
 
-def stochastic_gradient_descent(theta, X, Y, m, cost_list, alpha):
+def stochastic_gradient_descent(theta, X, Y, m, alpha):
 	'''
 	Apply the Gradient descent
 	'''
@@ -23,7 +23,6 @@ def stochastic_gradient_descent(theta, X, Y, m, cost_list, alpha):
 		for j in range(9):
 			hypothesis = sigmoid((X[i]).dot(theta)) # prediction
 			theta[j] -= (alpha / m) * (hypothesis - Y[i]) * X[i][j]
-			cost_function(Y, m, hypothesis, cost_list)
 	theta = np.reshape(theta, (9,))
 	return (theta)
 
