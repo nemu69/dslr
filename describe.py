@@ -1,3 +1,4 @@
+import os
 from numpy import NaN
 import math
 import pandas as pd
@@ -10,6 +11,9 @@ if __name__ == "__main__":
 		print("Error: no file data included")
 		exit(-1)
 	FILENAME = str(sys.argv[1])
+	if not os.path.exists(FILENAME):
+		print("Error: file not found")
+		exit(-1)
 	data = pd.read_csv(FILENAME)
 	#print(data.describe(include='all'))
 	title = list(data.columns)

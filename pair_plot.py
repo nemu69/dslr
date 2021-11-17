@@ -1,4 +1,5 @@
 # scatter plot of the data 
+import os
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -40,6 +41,9 @@ if __name__ == '__main__':
 		print('Usage: scatter_plot.py <data_file>')
 		sys.exit(1)
 	# read the data
+	if not os.path.exists(sys.argv[1]):
+		print("Error: file not found")
+		exit(-1)
 	data = pd.read_csv(sys.argv[1])
 	if (lib.describe_count(data['Hogwarts House'].dropna()) == 0):
 		print("Error: empty value")

@@ -39,12 +39,6 @@ def standarize_X(df_matrice):
 		)
 	return T(np.array(std_matrice))
 
-def atoi(str):
-	resultant = 0
-	for i in range(len(str)):
-		resultant = resultant * 10 + (ord(str[i]) - ord('0'))		#It is ASCII substraction 
-	return resultant
-
 def save_file(df):
 	create_file = "houses.csv"
 	if not os.path.exists(create_file):
@@ -55,14 +49,6 @@ def save_file(df):
 		index=False,
 		sep=',',
 	)
-
-def check_arg(arg):
-	iteration = 20
-	for i in range(len(arg)):
-		if (arg[i] == "iteration"):
-			if (i + 1 < len(arg)):
-				iteration = atoi(arg[i + 1])
-	return (iteration)
 
 def prediction(theta, X):
 	predict = sigmoid(X.dot(theta))
@@ -80,6 +66,9 @@ if __name__ == "__main__":
 
 	DATANAME = str(sys.argv[1])
 	WEIGHTNAME = str(sys.argv[2])
+	if not os.path.exists(DATANAME) or not os.path.exists(WEIGHTNAME):
+		print("Error: no file data included")
+		exit(-1)
 	datatest = pd.read_csv(DATANAME, index_col=False)
 	weight = pd.read_csv(WEIGHTNAME, index_col=False)
 

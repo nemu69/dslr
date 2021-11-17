@@ -96,6 +96,9 @@ if __name__ == "__main__":
 		print("Error: no file data included")
 		exit(-1)
 	FILENAME = str(sys.argv[1])
+	if not os.path.exists(FILENAME):
+		print("Error: file not found")
+		exit(-1)
 	iteration = check_arg(sys.argv)
 	data = pd.read_csv(FILENAME, index_col=False)
 	data = data.fillna(0)

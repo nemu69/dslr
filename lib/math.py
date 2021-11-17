@@ -112,7 +112,7 @@ def describe_std(df):
 	for x in df:
 		if isinstance(x, float) or isinstance(x, int): 
 			l.append(x)
-	if not (len(l) == len(df)):
+	if not (len(l) == len(df)) or describe_count(df) <= 1:
 		return (NaN)
 	dif = df - describe_mean(df)
 	mean = sum(np.abs(dif) ** 2) / (describe_count(df) - 1)

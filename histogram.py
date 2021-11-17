@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import sys
 import matplotlib.pyplot as plt
@@ -32,6 +33,9 @@ if __name__ == "__main__":
 		exit(-1)
 	FILENAME = str(sys.argv[1])
 	# read the data
+	if not os.path.exists(FILENAME):
+		print("Error: file not found")
+		exit(-1)
 	data = pd.read_csv(FILENAME, index_col=False)
 	if (lib.describe_count(data['Hogwarts House'].dropna()) == 0):
 		print("Error: empty value")
