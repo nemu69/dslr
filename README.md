@@ -75,6 +75,8 @@ Il est possible de faire plein de bonus pour ce sujet. Voici quelques suggestion
 
 # Results
 
+## Tools
+
  `python ./histogram.py DATA`
 
 <img alt="histo" src="https://github.com/AcensJJ/dslr/blob/main/img/histogram.png">
@@ -88,3 +90,15 @@ Il est possible de faire plein de bonus pour ce sujet. Voici quelques suggestion
 `python ./pair_plot.py DATA`
 
 <img alt="pair" src="https://github.com/AcensJJ/dslr/blob/main/img/pair_plot.png">
+
+## IA
+
+`python ./logreg_train.py DATA`
+
+### Sigmoid function (Logistic Function)
+
+<img alt="pair" src="https://github.com/AcensJJ/dslr/blob/main/img/log/sigmoid.png">
+
+### Cost fucntion
+
+<img alt="pair" src="https://github.com/AcensJJ/dslr/blob/main/img/log/cost.png">
