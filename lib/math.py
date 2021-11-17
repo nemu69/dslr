@@ -21,7 +21,7 @@ def stochastic_gradient_descent(theta, X, Y, m, cost_list, alpha):
 	'''
 	for i in range(m):
 		for j in range(9):
-			hypothesis = sigmoid((X[i]).dot(theta))
+			hypothesis = sigmoid((X[i]).dot(theta)) # prediction
 			theta[j] -= (alpha / m) * (hypothesis - Y[i]) * X[i][j]
 			cost_function(Y, m, hypothesis, cost_list)
 	theta = np.reshape(theta, (9,))
