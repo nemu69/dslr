@@ -58,6 +58,14 @@ Vous devrez rendre deux programmes :
 
 ![exemple 2](https://user-images.githubusercontent.com/45235527/140956376-a3c95194-5fc6-45c6-a6c3-bb0c549b71b7.PNG)
 
+# Partie bonus
+
+Il est possible de faire plein de bonus pour ce sujet. Voici quelques suggestions :
+- implémenter plus de champs pour describe.[extension]
+- implémenter un stochastic gradient descent
+- implémenter une fonction d’optimisation autre
+- ...
+
 # Requirements
 
 - python3.10
