@@ -113,16 +113,16 @@ if __name__ == "__main__":
         ),
         axis=1
     )
-	# df = data['Hogwarts House']
-	# save = pd.DataFrame()
-	# for house in lib.describe_unique_list_name(data['Hogwarts House'].dropna()):
-	# 	Y = T(np.array([int(y == house) for y in df], ndmin=2))
-	# 	theta = np.zeros((9, 1))
-	# 	for i in range(iteration):
-	# 		theta = lib.stochastic_gradient_descent(theta, X, Y, m, alpha=0.5)
-	# 	print(house)
-	# 	print(theta)
-	# 	save[house] = theta
-	# save_file(save)
+	df = data['Hogwarts House']
+	save = pd.DataFrame()
+	for house in lib.describe_unique_list_name(data['Hogwarts House'].dropna()):
+		Y = T(np.array([int(y == house) for y in df], ndmin=2))
+		theta = np.zeros((9, 1))
+		for i in range(iteration):
+			theta = lib.stochastic_gradient_descent(theta, X, Y, m, alpha=0.5)
+		print(house)
+		print(theta)
+		save[house] = theta
+	save_file(save)
 	draw_signoide()
 	draw_cost()
