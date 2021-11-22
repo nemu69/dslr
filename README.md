@@ -8,43 +8,47 @@
 
 ### <strong>Description</strong>
 
-Sujet proposé par l'association 42AI. Découvrez la Data Science à travers ce projet dans la reconstitution du Choixpeau Magique de Poudlard ! Attention, ceci n'est pas un sujet sur les appareils photos.
+Subject created by the 42AI association. Discover Data Science in the projects where you re-constitute Poudlard’s Sorting Hat. Warning: this is not a subject on cameras.
 
-> *Project en collaboration avec <a href="https://github.com/nemu69">Nemuel Page Léonie</a> (<a href="https://profile.intra.42.fr/users/nepage-l">nepage-l</a>).*
+> *Project en collaboration avec <a href="https://github.com/AcensJJ">Jean Jacques Acens</a> (<a href="https://profile.intra.42.fr/users/jacens">jacens</a>).*
 
 # Partie Obligatoire 
 
 ## V.1 Data Analysis
 
-Avant toutes choses, jetez un oeil aux données disponibles. Regardez sous quel formatelles sont enregistrées, s’il y a divers types de données, les différentes fourchettes, etc. Il est important de se faire une idée de votre matière première avant de commencer à travailler. Plus vous travaillerez sur des données et plus vous développerez une intuition sur comment vous allez pouvoir vous en servir.
+First of all, take a look at the available data. look in what format it is presented, if there are various types of data, the different ranges, and so on.
+It is important to make an idea of your raw material before starting. The more you work on data - the more you develop an intuition about how you will be able to use it.
 
-Dans cette partie, le professeur McGonagall vous demande de produire un programme nommé describe.[extension]. Ce programme prendra un dataset en paramètre. Il devra ni plus ni moins afficher les informations sur toutes les features numériques comme l’exemple qui suit :
+In this part, Professor McGonagall asks you to produce a program called describe.[extension].
+This program will take a dataset as a parameter. All it has to do is to display information for all numerical features like in the example:
 
 ![exemple 1](https://user-images.githubusercontent.com/45235527/140956374-bd39ca97-3633-44b2-b493-32e194b6c4dd.PNG)
 
 ## V.2  Data Visualization
 
-La visualisation des données est un outil puissant pour le datascientist. Cela vous permet d’acquérir une intuition sur comment les données sont connectées les unes aux autres. Visualiser vos données vous permet aussi de déceler plusieurs défauts.
+Data visualization is a powerful tool for a data scientist. It allows you to make insights and develop an intuition of what your data looks like.
+Visualizing your data also allows you to detect defects or anomalies..
 
-Dans cette section, il vous est demandé de répondre à une question en créant un script pour chacune des questions qui affichera une visualisation particulière. Il n’y a pas forcèment une seule réponse valable à la question.
+In this section, you are asked to create a set of scripts, each using a particular visualization method to answer a question. There is not necessarily a single answer to the question.
+
 
 ## V.2.1  Histogram
 
-Faites un script nommé histogram.[extension] qui affiche un histogram répondant à la question suivante :
+Make a script called histogram.[extension] which displays a histogram answering the next question :
 
-Quel cours de Poudlard a une répartition des notes homogènes entre les quatres maisons ?
+Which Hogwarts course has a homogeneous score distribution between all four houses ?
 
 ## V.2.2  Scatter plot
 
-Faites un script nommé scatter_plot.[extension] qui affiche un scatter plot répondant à la question suivante :
+Make a script called scatter_plot.[extension] which displays a scatter plot answering the next question :
 
-Quelles sont les deux features qui sont semblables ?
+What are the two features that are similar ?
 
 ## V.2.3  Pair plot
 
-Faites un script nommé pair_plot.[extension] qui affiche un pair plot ou scatter plot matrix (selon la librairie graphique que vous utiliserez).
+Make a script called pair_plot.[extension] which displays a pair plot or scatter plot matrix (according to the library that you are using).
 
-À partir de cette visualisation, quelles caractéristiques allez-vous utiliser pour entraîner votre prochaine régression logistique ?
+From this visualization, what features are you going to use for your logistic regression ?
 
 ## V.3  Logistic Regression
 
@@ -52,18 +56,22 @@ Vous arrivez à la dernière partie : coder votre Choixpeau magique. Pour ce fai
 
 Vous devrez rendre deux programmes :
 
-- un premier qui va train vos modèles, il se nomme logreg_train.[extension]. Il prend en paramètre dataset_train.csv. Pour la partie obligatoire, vous devez utilisez la technique du gradient descent pour minimiser l’erreur. Le programme génère un fichier contenant les poids qui seront réutilisés pour la prédiction.
+- First one will train your models, it’s called logreg_train.[extension]. It takes as a parameter dataset_train.csv. . For the mandatory part, you must use the technique of gradient descent to minimize the error. The program generates a file containing the weights that will be used for the prediction.
 
-- un second qui se nomme logreg_predict.[extension]. Il prend en paramètre dataset_test.csv et un fichier contenant les poids entraînés au préalable. Afin d’évaluer les performances de votre classifieur ce second programme devra génèrer un fichier de prédictions houses.csv formatté strictement de la manière suivante:
+- A second has to be named logreg_predict.[extension]. It takes as a parameter
+dataset_test.csv and a file containing the weights trained by previous program.
+
+In order to evaluate the performance of your classifier this second program will have
+to generate a prediction file houses.csv formatted exactly as follows:
 
 ![exemple 2](https://user-images.githubusercontent.com/45235527/140956376-a3c95194-5fc6-45c6-a6c3-bb0c549b71b7.PNG)
 
 # Partie bonus
 
-Il est possible de faire plein de bonus pour ce sujet. Voici quelques suggestions :
-- implémenter plus de champs pour describe.[extension]
-- implémenter un stochastic gradient descent
-- implémenter une fonction d’optimisation autre
+It is possible to make a lot of interesting bonuses for this subject. Here are some suggestions :
+- Add more fields for describe.[extension]
+- Implement a stochastic gradient descent
+- Implement other optimization algorithms (Batch GD/mini-batch GD/ you name it)
 - ...
 
 # Requirements
