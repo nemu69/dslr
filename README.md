@@ -52,9 +52,9 @@ From this visualization, what features are you going to use for your logistic re
 
 ## V.3  Logistic Regression
 
-Vous arrivez à la dernière partie : coder votre Choixpeau magique. Pour ce faire, il vous est demandé de réaliser un multi-classifieur en utilisant une régression logistique en one-vs-all.
+You arrive at the last part: code your Magic Hat. To do this, you have to perform a multi-classifier using a logistic regression one-vs-all.
 
-Vous devrez rendre deux programmes :
+You will have to make two programs :
 
 - First one will train your models, it’s called logreg_train.[extension]. It takes as a parameter dataset_train.csv. . For the mandatory part, you must use the technique of gradient descent to minimize the error. The program generates a file containing the weights that will be used for the prediction.
 
