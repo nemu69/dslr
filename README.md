@@ -12,7 +12,7 @@ Subject created by the 42AI association. Discover Data Science in the projects w
 
 > *Project en collaboration avec <a href="https://github.com/AcensJJ">Jean Jacques Acens</a> (<a href="https://profile.intra.42.fr/users/jacens">jacens</a>).*
 
-# Partie Obligatoire 
+# Mandatory part 
 
 ## V.1 Data Analysis
 
