@@ -107,6 +107,6 @@ It is possible to make a lot of interesting bonuses for this subject. Here are s
 
 <img alt="pair" src="https://github.com/AcensJJ/dslr/blob/main/img/log/sigmoid.png">
 
-### Cost fucntion
+### Cost function
 
 <img alt="pair" src="https://github.com/AcensJJ/dslr/blob/main/img/log/cost.png">
