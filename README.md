@@ -81,6 +81,10 @@ It is possible to make a lot of interesting bonuses for this subject. Here are s
     - pip3 install pandas
     - pip3 install matplotlib
 
+# doc
+
+<a href="https://sdsclub.com/stochastic-gradient-descent-vs-gradient-descent-a-head-to-head-comparison/">gradient vs stochastic gradient</a>
+
 # Results
 
 ## Tools
